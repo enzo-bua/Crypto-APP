@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react'
 import Header from './Components/Header'
 import Formulario from './Components/Formulario'
 import Data from './Components/Data'
-
-
 function App() {
 
   const [busqueda, setBusqueda] = useState({
@@ -16,19 +14,20 @@ function App() {
 
   const {crypto, currency} = busqueda
 
-  useEffect(() => {
+  useEffect(( ) => {
     const api = (`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${crypto}&tsyms=${currency}`)
-
     const getClima = async() => {
 
     const clima =  await fetch(api)
     const data =  await clima.json()    
-
+    console.log(data)
     setResultado(data)
-
+      
   }
   getClima()
   }, [consultar])
+
+
 
   return (
     <>
@@ -49,6 +48,8 @@ function App() {
                 <div className="col m6 s12">
                   <Data
                     resultado={resultado}
+                    busqueda={busqueda}
+
                   />
                 </div>
 

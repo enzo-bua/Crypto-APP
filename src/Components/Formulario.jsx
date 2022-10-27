@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Formulario = ({ busqueda, setBusqueda, guardarConsulta}) => {
 
   const {crypto, currency} = busqueda
@@ -65,12 +64,13 @@ const Formulario = ({ busqueda, setBusqueda, guardarConsulta}) => {
           </select>
           <label htmlFor="currency"></label>
         </div>
-
+        <div className="input-field col s12">
         <input  
           type="submit"
           value="Buscar Valor"
           className="waves-effect waves-light btn-large btn-block yellow accent-4"
         />
+      </div>
 
       </div>
     </form>
