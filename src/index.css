@@ -1,0 +1,58 @@
+body {
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+overflow: hidden;
+}
+
+.input-field label {
+color: white;
+}
+
+.but{
+    margin-left: 60px ;
+    border-radius: 10px;
+}
+
+.select{
+    border-radius: 10px;    
+}
+
+.but:hover{
+    background-color: rgb(13, 88, 103);
+}
+.container-form {
+background-image: url(./assets/fondo.png);
+padding-top: 5rem;
+padding-bottom: 23.5%;
+overflow: hidden;
+
+}
+.mensaje {
+text-align: center;
+font-size: 2rem;
+}
+
+.panel{
+    background-image: url(./assets/fondo2.png);
+    border-radius: 10px;
+}
+.card-panel h2 {
+font-size: 1.6rem;
+text-align: center;
+}
+.card-panel p {
+text-align: center;
+font-size: 1.4rem;
+}
+.temperatura {
+font-size: 4rem!important
+}
+.temperatura span {
+font-size: 2rem!important;
+vertical-align: super;
+}
+
+.btn-block {
+display: block!important;
+}

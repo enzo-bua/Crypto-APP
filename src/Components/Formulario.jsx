@@ -1,17 +1,17 @@
 import React from 'react'
+import { useRef } from 'react'
 const Formulario = ({ busqueda, setBusqueda, guardarConsulta}) => {
-
-  const {crypto, currency} = busqueda
-  const handleChange = (e) => {
-    // actualizar el state
-    setBusqueda({
-        ...busqueda,
-        [e.target.name] : e.target.value
-    })
-  }
+  const cryptoName = useRef()
+  const cryptoFiat = useRef()
 
   const handleSubmit = (e) =>{
     e.preventDefault()
+    const objeto = {
+      crypto: cryptoName.current.value,
+      currency: cryptoFiat.current.value
+    }
+   
+    setBusqueda(objeto)
     guardarConsulta(true)
   }
 
@@ -19,11 +19,10 @@ const Formulario = ({ busqueda, setBusqueda, guardarConsulta}) => {
     <form onSubmit={handleSubmit}>
       <div className='input-field col s12'>
         <select 
-          className='browser-default'
+          className='select browser-default'
           name="crypto"
           id="crypto"
-          value={crypto}
-          onChange={handleChange}
+          ref={cryptoName}
         >
           <option value="disabled selected">--Seleccione una moneda--</option>
           <option value="BTC">Bitcoin</option>
@@ -50,11 +49,10 @@ const Formulario = ({ busqueda, setBusqueda, guardarConsulta}) => {
 
         <div className="input-field col s12">
           <select
-            className="browser-default"
+            className="select browser-default"
             name="currency"
             id="currency"
-            value={currency}
-            onChange={handleChange}
+            ref={cryptoFiat}
 
             
           >
@@ -68,7 +66,7 @@ const Formulario = ({ busqueda, setBusqueda, guardarConsulta}) => {
         <input  
           type="submit"
           value="Buscar Valor"
-          className="waves-effect waves-light btn-large btn-block yellow accent-4"
+          className="but waves-effect btn-large btn-block  accent-4"
         />
       </div>
 
@@ -78,3 +76,4 @@ const Formulario = ({ busqueda, setBusqueda, guardarConsulta}) => {
 }
 
 export default Formulario
+
